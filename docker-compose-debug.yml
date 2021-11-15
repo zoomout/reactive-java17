@@ -4,10 +4,10 @@ services:
     deploy:
       resources:
         limits:
-          cpus: 2
-          memory: 1024M
+          cpus: 4
+          memory: 2048M
         reservations:
-          memory: 1024M
+          memory: 2048M
     build:
       context: ./reactive-java17-server
     ports:
@@ -16,10 +16,10 @@ services:
     deploy:
       resources:
         limits:
-          cpus: 2
-          memory: 1024M
+          cpus: 4
+          memory: 2048M
         reservations:
-          memory: 1024M
+          memory: 2048M
     build:
       context: ./reactive-java17-client
     ports:
@@ -32,14 +32,14 @@ services:
     deploy:
       resources:
         limits:
-          cpus: 2
-          memory: 1024M
+          cpus: 4
+          memory: 2048M
         reservations:
-          memory: 1024M
+          memory: 2048M
     build:
       context: ./reactive-java17-client
     ports:
-      - "8093:8092"
+      - "8093:8093"
     environment:
       - "REACTIVE_SERVER_HOST=my.server"
     depends_on:

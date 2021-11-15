@@ -1,13 +1,27 @@
 version: '3'
 services:
-  reactive.java17.server:
+  my.server:
+    deploy:
+      resources:
+        limits:
+          cpus: 2
+          memory: 1024M
+        reservations:
+          memory: 1024M
     build:
       context: ./reactive-java17-server
     ports:
       - "8091:8091"
       - "6001:6001"
     command: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6001"
-  reactive.java17.client:
+  my.client:
+    deploy:
+      resources:
+        limits:
+          cpus: 2
+          memory: 1024M
+        reservations:
+          memory: 1024M
     build:
       context: ./reactive-java17-client
     ports:
@@ -15,4 +29,6 @@ services:
       - "6002:6002"
     command: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6002"
     environment:
-      - "REACTIVE_SERVER_HOST=reactive.java17.server:8091"
+      - "REACTIVE_SERVER_HOST=my.server"
+    depends_on:
+      - my.server

@@ -1,0 +1,18 @@
+version: '3'
+services:
+  reactive.java17.server:
+    build:
+      context: ./reactive-java17-server
+    ports:
+      - "8091:8091"
+      - "6001:6001"
+    command: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6001"
+  reactive.java17.client:
+    build:
+      context: ./reactive-java17-client
+    ports:
+      - "8092:8092"
+      - "6002:6002"
+    command: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6002"
+    environment:
+      - "REACTIVE_SERVER_HOST=reactive.java17.server:8091"

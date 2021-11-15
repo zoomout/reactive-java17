@@ -1,0 +1,4 @@
+rootProject.name = "reactive-java-17"
+
+include 'reactive-java17-client'
+include 'reactive-java17-server'

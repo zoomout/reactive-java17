@@ -16,7 +16,7 @@ Server can handle more.
 For example if running 2 clients in parallel calling 1 server, the response time doesn't degrade
 ```
 # terminal 1
-time curl --location --request GET 'localhost:8093/client/string?n=255&d=2000'
+time curl --location --request GET 'localhost:8092/client/string?n=255&d=2000'
 real    0m2.074s
 # terminal 2
 time curl --location --request GET 'localhost:8093/client/string?n=255&d=2000'

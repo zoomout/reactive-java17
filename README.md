@@ -7,8 +7,10 @@ Delay argument is passed through to the server, server delays each item accordin
 
 # WebFlux configuration
 By default, WebFlux allows 255 parallel client requests.
+```
 GET http://localhost:8092/client/string?n=255&d=1000 => response in ~1000ms
 GET http://localhost:8092/client/string?n=256&d=1000 => response in ~2000ms
+```
 
 Server can handle more.
 For example if running 2 clients in parallel calling 1 server, the response time doesn't degrade

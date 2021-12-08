@@ -7,5 +7,5 @@ DOCKER_DIR=${DIR=}
 
 echo "     * Stopping ..."
 docker_files="-f ${DOCKER_DIR}/docker-compose.yml"
-docker-compose $docker_files down -v;
+docker compose $docker_files down -v;
 docker system prune -f --volumes

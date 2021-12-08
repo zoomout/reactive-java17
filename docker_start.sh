@@ -35,6 +35,6 @@ function service_health_check() {
 
 docker_files="-f ${DOCKER_DIR}/docker-compose.yml"
 
-docker-compose $docker_files pull
-docker-compose $docker_files build --pull
-docker-compose ${docker_files} up --force-recreate --detach
+docker compose $docker_files pull
+docker compose $docker_files build --pull
+docker compose ${docker_files} up --force-recreate --detach

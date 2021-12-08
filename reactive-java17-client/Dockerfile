@@ -1,4 +1,4 @@
-FROM gradle:jdk17-alpine
+FROM openjdk:17
 
 ARG JAR_FILE=build/libs/reactive-java17-client-*.jar
 COPY ${JAR_FILE} /app.jar

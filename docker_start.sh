@@ -1,7 +1,6 @@
 #!/bin/bash
 
 set -e
-envVars="-e TNT_NEXUS_USERNAME=$TNT_NEXUS_USERNAME -e TNT_NEXUS_PASSWORD=$TNT_NEXUS_PASSWORD"
 
 DOCKER_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
